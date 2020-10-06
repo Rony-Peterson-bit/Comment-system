@@ -34,11 +34,11 @@ if(isset($_POST['email']))
 			header("location: index.php");
 		}else
 		{
-			echo "Email e/ou senha estão incorretos!";
+			?><h1>Email e/ou senha estão incorretos!</h1><?php
 		}
 	}else
 	{
-		echo "Preencha todos os campos!";
+	   ?>	<h1>Preencha todos os campos! </h1> <?php
 	}
 }
 
