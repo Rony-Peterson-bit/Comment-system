@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<title>Sistema de Comentarios</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="CSS/entrar.css">
-</head>
-<body>
-	<span>Rony<br>Peterson</span>
+<?php 
+ // Header
+include_once 'includes/header.php';
+?>
+	
 	<form method="POST">
 		<h1>Acesse a sua conta</h1>
-		<img src="IMAGENS/envelope.png">
+		
 		<input type="email" name="email" autocomplete="off" maxlength="40">
-		<img src="IMAGENS/cadeado.png">
+		
 		<input type="password" name="senha">
 		<input type="submit" value="ENTRAR">
 		<a href="cadastrar.php">Registre-se agora!</a>
 	</form>
-</body>
-</html>
+
 
 <?php
 
@@ -38,8 +33,11 @@ if(isset($_POST['email']))
 		}
 	}else
 	{
-	   ?>	<h1>Preencha todos os campos! </h1> <?php
+	   ?>	<h1>Preencha todos os campos! </h1> 
+	   <?php
 	}
 }
+
+include_once 'includes/footer.php';
 
 ?>
