@@ -15,25 +15,28 @@
 ?>
     
 	<nav>
-		<ul>
-			<?php
-				if(isset($_SESSION['id_master']))
-				{ ?>
-					<li><a href="dados.php">Dados</a></li>
-	<?php		}
-			?>
-			<li><a href="discussao.php">Discussão</a></li>
-			<?php
-				if(isset($informacoes))//tem uma sessao, tem uma pessoa logada
-				{ ?>
-					<li><a href="sair.php">Sair</a></li>
-	<?php		}
-				else
-				{ ?>
-					<li><a href="entrar.php">Entrar</a></li>
-	<?php		}
-			?>		
-		</ul>
+	  <div class="nav-wrapper">
+		   <ul  class="right hide-on-med-and-down" >
+
+				<?php
+					if(isset($_SESSION['id_master']))
+					{ ?>
+						<li><a href="dados.php">Dados</a></li>
+		<?php		}
+				?>
+				<li><a href="discussao.php"><i class="material-icons left">visibility</i>Discussão</a></li>
+				<?php
+					if(isset($informacoes))//tem uma sessao, tem uma pessoa logada
+					{ ?>
+						<li><a href="sair.php">Sair</a></li>
+		<?php		}
+					else
+					{ ?>
+						<li><a href="entrar.php"><i class="material-icons left">account_circle</i> Logar</a></li>
+		<?php		}
+				?>		
+			</ul>
+	  </div>
 	</nav>
 	<?php
 
