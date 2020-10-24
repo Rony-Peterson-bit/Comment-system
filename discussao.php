@@ -26,10 +26,10 @@ include_once 'includes/header.php';
 			?>
 		</ul>
 	</nav>
-	<div id="largura-pagina">
+	<div id="largura-pagina" >
 		<section id="conteudo1">
 			<h1>Guia Definitivo Como Criar um Blog Incrível e Ganhar Dinheiro Com Ele</h1>
-			<img src="assets/img/computador.jpg">
+			<img src="assets/img/computador.jpg" class="right-align">
 			<p class="texto">É um fato há muito estabelecido que um leitor se distrairá com o conteúdo legível de uma página ao analisar seu layout. O ponto de usar o Lorem Ipsum é que ele tem uma distribuição de letras mais ou menos normal, em vez de usar 'Conteúdo aqui, conteúdo aqui'.</p>
 			<p class="texto">1. O ponto de usar o Lorem Ipsum</p>
 			<p class="texto">2. È que ele tem uma distribuição de letras</p>

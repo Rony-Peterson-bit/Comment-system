@@ -56,7 +56,7 @@
 	
 	
 	</main>
-	<h3 style="text-align: center;">CONTEÚDO QUALQUER</h3>
+	<h3 style="text-align: center;">TELA INICIAL</h3>
 	
 	<?php
 // Footer
