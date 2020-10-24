@@ -26,10 +26,26 @@ include_once 'includes/header.php';
 			?>
 		</ul>
 	</nav>
+   
+	
+	<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="images/office.jpg">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Guia Definitivo Como Criar um Blog Incrível e Ganhar Dinheiro Com Ele<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">This is a link</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>Card Title</span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </div>
+  </div>
+
 	<div id="largura-pagina" >
 		<section id="conteudo1">
 			<h1>Guia Definitivo Como Criar um Blog Incrível e Ganhar Dinheiro Com Ele</h1>
-			<img src="assets/img/computador.jpg" class="right-align">
+			
 			<p class="texto">É um fato há muito estabelecido que um leitor se distrairá com o conteúdo legível de uma página ao analisar seu layout. O ponto de usar o Lorem Ipsum é que ele tem uma distribuição de letras mais ou menos normal, em vez de usar 'Conteúdo aqui, conteúdo aqui'.</p>
 			<p class="texto">1. O ponto de usar o Lorem Ipsum</p>
 			<p class="texto">2. È que ele tem uma distribuição de letras</p>
@@ -50,7 +66,7 @@ include_once 'includes/header.php';
 				if(isset($_SESSION['id_usuario']) || isset($_SESSION['id_master']))
 				{ ?>
 					<form method="POST">
-						<img src="assets/img//perfil.png">
+						
 						<textarea name="texto" placeholder="Participe da discussão" maxlength="400"></textarea>
 						<input type="submit" value="PUBLICAR COMENTARIO">
 					</form>
@@ -64,7 +80,7 @@ include_once 'includes/header.php';
 				foreach ($coments as $v) 
 				{ ?>
 					<div class="area-comentario">
-						<img src="assets/img//perfil.png">
+						
 						<h3><?php echo $v['nome_pessoa']; ?></h3>
 						<h4>
 							<?php
@@ -97,7 +113,7 @@ include_once 'includes/header.php';
 		</section>
 		<section id="conteudo2">
 			<div>
-				<img src="assets/img//img-lateral.jpg">
+				
 				<p>Analisar seu layout. O ponto de usar o Lorem Ipsum é que ele tem uma distribuição de letras mais ou menos normal, em vez de usar 'Conteúdo aqui, conteúdo aqui'.</p>
 			</div>
 		</section>
