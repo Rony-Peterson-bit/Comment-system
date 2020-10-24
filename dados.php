@@ -26,31 +26,39 @@ $dados = $us->buscarTodosUsuarios();
 			<li><a href="sair.php">Sair</a></li>
 		</ul>
 	</nav>
-	<table>
-		<tr id="titulo">
-			<td>ID</td>
-			<td>NOME</td>
-			<td>EMAIL</td>
-			<td>COMENTÁRIOS</td>
-		</tr>
-	<?php
-	if(count($dados) > 0)
-	{
-		foreach ($dados as $v) 
-		{ ?>
-			<tr>
-				<td><?php echo $v['id'];?></td>
-				<td><?php echo $v['nome'];?></td>
-				<td><?php echo $v['email'];?></td>
-				<td><?php echo $v['quantidade'];?></td>
-			</tr>
-<?php	}
-	}else
-	{
-		echo "Ainda não há usuarios cadastrados";
-	}
 
-	// Footer
-include_once 'includes/footer.php';
-	?>
+	
+	<table  class="centered">
+		<thead>
+			<tr id="titulo">
+				<th>ID</th>
+				<th>NOME</th>
+				<th>EMAIL</th>
+				<th>COMENTÁRIOS</th>
+			</tr>
+	</thead>
+
+	<tbody>
+		<?php
+		if(count($dados) > 0)
+		{
+			foreach ($dados as $v) 
+			{ ?>
+				<tr>
+					<td><?php echo $v['id'];?></td>
+					<td><?php echo $v['nome'];?></td>
+					<td><?php echo $v['email'];?></td>
+					<td><?php echo $v['quantidade'];?></td>
+				</tr>
+					
+	<?php	}
+		}else
+		{
+			echo "Ainda não há usuarios cadastrados";
+		}
+
+		// Footer
+	include_once 'includes/footer.php';
+		?>
+		</tbody>
 	</table>
