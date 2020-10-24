@@ -42,7 +42,7 @@
 
 	 if (isset($_SESSION['id_master']) || isset($_SESSION['id_usuario']))
 	 { ?>
-		<h2>
+		<h2 style="text-align: center;">
 			<?php 
 			echo "Olá! "; 
 			echo $informacoes['nome'];
@@ -56,7 +56,7 @@
 	
 	
 	</main>
-	<h3>CONTEÚDO QUALQUER</h3>
+	<h3 style="text-align: center;">CONTEÚDO QUALQUER</h3>
 	
 	<?php
 // Footer

@@ -2,19 +2,44 @@
   // Header
 include_once 'includes/header.php';
 ?>
-	<form method="POST">
-		<h1>CADASTRE-SE</h1>
-		<label for="nome">NOME</label>
-		<input type="text" name="nome" id="nome" maxlength="40">
-		<label for="email">EMAIL</label>
-		<input type="email" name="email" autocomplete="off" id="email" maxlength="40">
-		<label for="senha">SENHA</label>
-		<input type="password" name="senha" id="senha">
-		<label for="confSenha">CONFIRMAR SENHA</label>
-		<input type="password" name="confSenha" id="confSenha">
-		<input type="submit" value="cadastrar">
-	</form>
+	<h1 style="text-align: center;">CADASTRE-SE</h1>
+	
+	<div class="row">
+		<form method="POST" class="col s12 m12 l12">
+			<div class="row">
 
+			<div class="input-field col s4  offset-s4  ">
+			  <input type="text" name="nome" id="nome" maxlength="40" autocomplete="off" >
+			  <label for="nome">NOME</label>
+		   </div>
+			
+			
+			
+
+			<div class="input-field col s4 offset-s4">
+			 <input id="email" type="email" name="email" autocomplete="off" maxlength="40"class="validate" >
+			 <label for="email" data-error="wrong" data-success="right">Email</label>
+		   </div>
+
+		   <div class="input-field col s4  offset-s4  ">
+			  <input type="password" name="senha">
+			  <label for="senha">Senha</label> 
+		   </div>
+ 
+
+           <div class="input-field col s4  offset-s4  ">
+			  <input type="password" name="confSenha" id="confSenha">
+			  <label for="confSenha">Confirmar Senha</label>
+		   </div>
+
+		   <div class="input-field col s4  offset-s5  ">
+		  	 <button class="btn waves-effect waves-light" type="submit" 			name="action">Cadastrar
+   			 <i class="material-icons right">send</i>
+  			</button>
+		   </div>
+		</form>
+		</div>
+	</div>
 
 <!--========================== PHP ==========================-->
 
@@ -40,18 +65,18 @@ if(isset($_POST['nome']))
 			$us = new Usuario("projeto_comentarios","localhost","root","");
 			if($us->cadastrar($nome, $email, $senha))
 			{ ?>
-				<p class="mensagem">Cadastrado com sucesso!<a href="entrar.php">Acesse já!</a></p> 
+				<p style="text-align: center;"class="mensagem">Cadastrado com sucesso!<a href="entrar.php">Acesse já!</a></p> 
 <?php		}else
 			{ ?>
-				<p class="mensagem">Email já está cadastrado!</p>
+				<p style="text-align: center;"class="mensagem">Email já está cadastrado!</p>
 <?php		}
 		}else
 		{ ?>
-			<p class="mensagem">Senhas não correspondem!</p>
+			<p style="text-align: center;" class="mensagem">Senhas não correspondem!</p>
 <?php	}	
 	}else
 	{ ?>
-		<p class="mensagem">Preencha todos os campos!</p>
+		<p style="text-align: center;"class="mensagem">Preencha todos os campos!</p>
 <?php }
 }
 

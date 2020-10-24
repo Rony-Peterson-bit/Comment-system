@@ -16,7 +16,7 @@ include_once 'includes/header.php';
 		   <div class="input-field col s4  offset-s4  ">
 		      <i class="material-icons prefix">lock</i>
 			  <input type="password" name="senha">
-			  <label for="icon_telephone">Senha</label> 
+			  <label for="lock">Senha</label> 
 		   </div>
 
 		   <div class="input-field col s4  offset-s5  ">
