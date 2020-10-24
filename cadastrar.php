@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<title>Sistema de Comentarios</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="CSS/cadastrar.css">
-</head>
-<body>
+<?php 
+  // Header
+include_once 'includes/header.php';
+?>
 	<form method="POST">
 		<h1>CADASTRE-SE</h1>
 		<label for="nome">NOME</label>
@@ -18,8 +14,7 @@
 		<input type="password" name="confSenha" id="confSenha">
 		<input type="submit" value="cadastrar">
 	</form>
-</body>
-</html>
+
 
 <!--========================== PHP ==========================-->
 
@@ -59,4 +54,7 @@ if(isset($_POST['nome']))
 		<p class="mensagem">Preencha todos os campos!</p>
 <?php }
 }
+
+// Footer
+include_once 'includes/footer.php';
 ?>
