@@ -8,6 +8,8 @@ require_once 'CLASSES/usuarios.php';
 $us = new Usuario("projeto_comentarios","localhost","root","");
 $dados = $us->buscarTodosUsuarios();
 
+ // Header
+ include_once 'includes/header.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -47,7 +49,8 @@ $dados = $us->buscarTodosUsuarios();
 	{
 		echo "Ainda não há usuarios cadastrados";
 	}
+
+	// Footer
+include_once 'includes/footer.php';
 	?>
 	</table>
-</body>
-</html>

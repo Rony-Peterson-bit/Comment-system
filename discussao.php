@@ -3,15 +3,11 @@
 	require_once 'CLASSES/comentarios.php';
 	$c = new Comentario("projeto_comentarios","localhost","root","");
 	$coments = $c->buscarComentarios();
+
+// Header
+include_once 'includes/header.php'; 
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<title>Sistema de Comentarios</title>
-	<meta charset="utf-8"/>
-	<link rel="stylesheet" href="CSS/discussao.css"/>
-</head>
-<body>
+
 	<nav>
 		<ul>
 			<li><a href="index.php">Inicio</a></li>
@@ -33,7 +29,7 @@
 	<div id="largura-pagina">
 		<section id="conteudo1">
 			<h1>Guia Definitivo Como Criar um Blog Incrível e Ganhar Dinheiro Com Ele</h1>
-			<img src="IMAGENS/computador.jpg">
+			<img src="assets/img/computador.jpg">
 			<p class="texto">É um fato há muito estabelecido que um leitor se distrairá com o conteúdo legível de uma página ao analisar seu layout. O ponto de usar o Lorem Ipsum é que ele tem uma distribuição de letras mais ou menos normal, em vez de usar 'Conteúdo aqui, conteúdo aqui'.</p>
 			<p class="texto">1. O ponto de usar o Lorem Ipsum</p>
 			<p class="texto">2. È que ele tem uma distribuição de letras</p>
@@ -54,7 +50,7 @@
 				if(isset($_SESSION['id_usuario']) || isset($_SESSION['id_master']))
 				{ ?>
 					<form method="POST">
-						<img src="IMAGENS/perfil.png">
+						<img src="assets/img//perfil.png">
 						<textarea name="texto" placeholder="Participe da discussão" maxlength="400"></textarea>
 						<input type="submit" value="PUBLICAR COMENTARIO">
 					</form>
@@ -68,7 +64,7 @@
 				foreach ($coments as $v) 
 				{ ?>
 					<div class="area-comentario">
-						<img src="IMAGENS/perfil.png">
+						<img src="assets/img//perfil.png">
 						<h3><?php echo $v['nome_pessoa']; ?></h3>
 						<h4>
 							<?php
@@ -101,7 +97,7 @@
 		</section>
 		<section id="conteudo2">
 			<div>
-				<img src="IMAGENS/img-lateral.jpg">
+				<img src="assets/img//img-lateral.jpg">
 				<p>Analisar seu layout. O ponto de usar o Lorem Ipsum é que ele tem uma distribuição de letras mais ou menos normal, em vez de usar 'Conteúdo aqui, conteúdo aqui'.</p>
 			</div>
 		</section>
@@ -112,8 +108,7 @@
 			</div>
 		</section>
 	</div>
-</body>
-</html>
+
 
 <?php
 if(isset($_POST['texto']))
@@ -147,4 +142,7 @@ if (isset($_GET['id_exc']))
 	}
 	header("location: discussao.php");
 }
+// Footer
+include_once 'includes/footer.php';
+
 ?>
