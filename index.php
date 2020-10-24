@@ -10,15 +10,10 @@
 		$us = new Usuario("projeto_comentarios","localhost","root","");
 		$informacoes = $us->buscarDadosUser($_SESSION['id_master']);
 	}
+	// Header
+    include_once 'includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<title>Sistema de Comentarios</title>
-	<meta charset="utf-8"/>
-	<link rel="stylesheet" href="CSS/estilo.css"/>
-</head>
-<body>
+    
 	<nav>
 		<ul>
 			<?php
@@ -59,5 +54,8 @@
 	
 	</main>
 	<h3>CONTEÚDO QUALQUER</h3>
-</body>
-</html>
+	
+	<?php
+// Footer
+include_once 'includes/footer.php';
+?>

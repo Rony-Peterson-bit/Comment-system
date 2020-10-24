@@ -1,6 +1,7 @@
 # CRUD simples
 
 ## Tecnologias Usadas
-* CSS
+* Materialize
 * Xampp
 * VS Code
+
