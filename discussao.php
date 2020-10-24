@@ -26,35 +26,15 @@ include_once 'includes/header.php';
 			?>
 		</ul>
 	</nav>
-   
-	
-	<div class="card">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="images/office.jpg">
-    </div>
-    <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">Guia Definitivo Como Criar um Blog Incrível e Ganhar Dinheiro Com Ele<i class="material-icons right">more_vert</i></span>
-      <p><a href="#">This is a link</a></p>
-    </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>Card Title</span>
-      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-    </div>
-  </div>
 
-	<div id="largura-pagina" >
-		<section id="conteudo1">
-			<h1>Guia Definitivo Como Criar um Blog Incrível e Ganhar Dinheiro Com Ele</h1>
-			
-			<p class="texto">É um fato há muito estabelecido que um leitor se distrairá com o conteúdo legível de uma página ao analisar seu layout. O ponto de usar o Lorem Ipsum é que ele tem uma distribuição de letras mais ou menos normal, em vez de usar 'Conteúdo aqui, conteúdo aqui'.</p>
-			<p class="texto">1. O ponto de usar o Lorem Ipsum</p>
-			<p class="texto">2. È que ele tem uma distribuição de letras</p>
-			<p class="texto">3. Lorem Ipsum é que ele tem uma distribuição</p>
-			<p class="texto">4. letras mais ou menos normal</p>
+
+  
+
+	
 			<?php
 				if (!isset($_SESSION['id_usuario']))
 				{ ?>
-					<h2>Comentários</h2>
+					<h4>Comentários</h4>
 	<?php		}else
 				{ ?>
 					<h2>Deixe seu comentários</h2>
@@ -65,11 +45,18 @@ include_once 'includes/header.php';
 			<?php
 				if(isset($_SESSION['id_usuario']) || isset($_SESSION['id_master']))
 				{ ?>
-					<form method="POST">
-						
-						<textarea name="texto" placeholder="Participe da discussão" maxlength="400"></textarea>
+				    <div class="row">
+					  <form method="POST">
+						<div class="row">
+						 <div class="input-field col s3">
+						  <i class="material-icons prefix">mode_edit</i>
+						  <textarea id="icon_prefix2" name="texto" placeholder="Participe da discussão" maxlength="400"></textarea>
+						  <label for="icon_prefix2">First Name</label>
+				</div>
+				</div>
 						<input type="submit" value="PUBLICAR COMENTARIO">
 					</form>
+					</div>
 <?php			}
 			?>
 
@@ -79,10 +66,10 @@ include_once 'includes/header.php';
 			{
 				foreach ($coments as $v) 
 				{ ?>
-					<div class="area-comentario">
+					<div class="area-comentario" class="">
 						
-						<h3><?php echo $v['nome_pessoa']; ?></h3>
-						<h4>
+						<h4><?php echo $v['nome_pessoa']; ?></h4>
+						<p>
 							<?php
 								$data = new DateTime($v['dia']);
 								echo $data->format('d/m/Y');
@@ -101,7 +88,7 @@ include_once 'includes/header.php';
 							{ ?>
 								<a href="discussao.php?id_exc=<?php echo $v['id'];?>">Excluir</a>
 			<?php			} ?>	
-						</h4>
+						</p>
 						<p><?php echo $v['comentario'];?></p>
 					</div>
 	<?php		}
@@ -110,19 +97,14 @@ include_once 'includes/header.php';
 				echo "Ainda não há comentarios por aqui!";
 			}
 		?>
-		</section>
-		<section id="conteudo2">
-			<div>
-				
-				<p>Analisar seu layout. O ponto de usar o Lorem Ipsum é que ele tem uma distribuição de letras mais ou menos normal, em vez de usar 'Conteúdo aqui, conteúdo aqui'.</p>
-			</div>
-		</section>
-		<section id="conteudo3">
-			<div>
-				<h5>Saiba mais sobre como fazer</h5>
-				<p>Analisar seu layout. O ponto de usar o Lorem Ipsum é que ele tem uma distribuição de letras mais ou menos normal, em vez de usar 'Conteúdo aqui, conteúdo aqui'.</p>
-			</div>
-		</section>
+		
+	
+		
+			
+	
+
+
+		
 	</div>
 
 
