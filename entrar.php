@@ -2,16 +2,31 @@
  // Header
 include_once 'includes/header.php';
 ?>
-	
-	<form method="POST">
-		<h1>Acesse a sua conta</h1>
+	<h1>Acesse a sua conta</h1>
+	<div class="row">
+	<form method="POST" class="col s12 m12 l12">
+		<div class="row">
+		   <div class="input-field col s4 offset-s4">
+			 <i class="material-icons prefix">account_circle</i>
+			 <input type="email" name="email" autocomplete="off" maxlength="40">
+			 <label for="icon_prefix">Email</label>
+		   </div>
+		   
+		   <div class="input-field col s4  offset-s4  ">
+		      <i class="material-icons prefix">phone</i>
+			  <input type="password" name="senha">
+			  <label for="icon_telephone">Senha</label> 
+		   </div>
+
+		   <div class="input-field col s4  offset-s5  ">
+				<input type="submit" value="ENTRAR">
+				<a href="cadastrar.php">Registre-se agora!</a>
+		   </div>
 		
-		<input type="email" name="email" autocomplete="off" maxlength="40">
+		</div>
 		
-		<input type="password" name="senha">
-		<input type="submit" value="ENTRAR">
-		<a href="cadastrar.php">Registre-se agora!</a>
 	</form>
+	</div>
 
 
 <?php
