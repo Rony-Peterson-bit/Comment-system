@@ -82,6 +82,13 @@ public function buscarDadosUser($id)
     return $dads;
     
 }
+public function buscarTodosUsuarios()
+	{
+		$cmd = $this->pdo->prepare("SELECT usuarios.id, usuarios.nome, usuarios.email, COUNT(comentarios.id) as 'quantidade' from usuarios left join comentarios ON usuarios.id = comentarios.fk_id_usuario group by usuarios.id");
+		$cmd->execute();
+		$dados = $cmd->fetchAll(PDO::FETCH_ASSOC);
+		return $dados;
+	}
 
 }
 

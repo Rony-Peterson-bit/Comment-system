@@ -5,7 +5,7 @@ if (!isset($_SESSION['id_master']))
 	header("location: index.php");
 }
 require_once 'CLASSES/usuarios.php';
-$us = new Usuario("projeto_comentarios","localhost","root","");
+$us = new Usuario("projet_comentarios","localhost","root","");
 $dados = $us->buscarTodosUsuarios();
 
  // Header
@@ -57,8 +57,11 @@ $dados = $us->buscarTodosUsuarios();
 			echo "Ainda não há usuarios cadastrados";
 		}
 
-		// Footer
-	include_once 'includes/footer.php';
+	
 		?>
 		</tbody>
 	</table>
+<?php 
+	// Footer
+	include_once 'includes/footer.php';
+ ?>
