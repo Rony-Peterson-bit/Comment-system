@@ -40,6 +40,8 @@ include_once 'includes/header.php';
 		</form>
 		</div>
 	</div>
+	<?php // Footer
+include_once 'includes/footer.php'; ?>
 
 <!--========================== PHP ==========================-->
 
@@ -62,7 +64,7 @@ if(isset($_POST['nome']))
 		if($senha == $confSenha)
 		{
 			require_once 'CLASSES/usuarios.php';
-			$us = new Usuario("projeto_comentarios","localhost","root","");
+			$us = new Usuario("projet_comentarios","localhost","root","");
 			if($us->cadastrar($nome, $email, $senha))
 			{ ?>
 				<p style="text-align: center;"class="mensagem">Cadastrado com sucesso!<a href="entrar.php">Acesse já!</a></p> 
@@ -80,6 +82,5 @@ if(isset($_POST['nome']))
 <?php }
 }
 
-// Footer
-include_once 'includes/footer.php';
+
 ?>

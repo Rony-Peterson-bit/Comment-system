@@ -50,7 +50,7 @@ include_once 'includes/header.php';
 						<div class="row">
 						 <div class="input-field col s3">
 						 
-						  <textarea id="icon_prefix2" name="texto" maxlength="35" rows="10"style="color: white;">
+						  <textarea id="icon_prefix2" name="texto" maxlength="35" rows="10" style="color: white;">
 						</textarea>
 						  
 						  <label for="icon_prefix2">Participe da discussão</label>
@@ -102,43 +102,42 @@ include_once 'includes/header.php';
 			{
 				echo "Ainda não há comentarios por aqui!";
 			}
+			// Footer 
+			include_once 'includes/footer.php';
 		?>
 		
 
 
-		<?php 
-//pegar id de exclusão
-if (isset($_GET['id_exc'])) 
+<?php
+if(isset($_POST['texto']))
 {
-    $id_e = addslashes($_GET['id_exc']);
-    if (isset($_SESSION['id_master'])) 
-    {
-        $c->excluirComentario($id_e, $_SESSION['id_master']);
-    }
-    elseif (isset($_SESSION['id_usuario']))
-    {
-        $c->excluirComentario($id_e, $_SESSION['id_usuario']);
-
-    }
-    header("location: discussao.php");
+	$texto = htmlentities(addslashes($_POST['texto']));
+	if (isset($_SESSION['id_master']))
+	{
+		$c->inserirComentario($_SESSION['id_master'], $texto);
+	}elseif (isset($_SESSION['id_usuario']))
+	{
+		$c->inserirComentario($_SESSION['id_usuario'], $texto);
+	}
+	header("location: discussao.php");
 }
 ?>
 
-<?php 
-//comentar
-if (isset($_POST['texto'])) 
-{
-    $texto= addslashes($_POST['texto']);
-    if (isset($_SESSION['id_master'])) 
-    {
-        $c->inserirComentario($_POST['id_master'],$texto);
-    }
-    elseif (isset($_SESSION['id_usuario'])) 
-    {
-        $c->inserirComentario($_POST['id_usuario'],$texto);
-    }
-    
-    header("location: discussao.php");
-}
 
+<?php
+//pegar id de exclusao
+if (isset($_GET['id_exc']))
+{
+	$id_e = addslashes($_GET['id_exc']);
+
+	if(isset($_SESSION['id_master']))
+	{
+		$c->excluirComentario($id_e,$_SESSION['id_master']);
+
+	}elseif (isset($_SESSION['id_usuario'])) 
+	{
+		$c->excluirComentario($id_e,$_SESSION['id_usuario']);
+	}
+	header("location: discussao.php");
+}
 ?>
