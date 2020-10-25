@@ -14,8 +14,8 @@
     include_once 'includes/header.php';
 ?>
     
-	<nav>
-	  <div class="nav-wrapper">
+	<nav  >
+	  <div class="nav-wrapper purple lighten-1">
 		   <ul  class="right hide-on-med-and-down" >
 
 				<?php

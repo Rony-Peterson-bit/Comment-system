@@ -8,7 +8,7 @@
 include_once 'includes/header.php'; 
 ?>
 
-	<nav>
+	<nav class="purple lighten-1">
 		<ul>
 			<li><a href="index.php">Inicio</a></li>
 			<?php

@@ -7,7 +7,7 @@ include_once 'includes/header.php';
 	<form method="POST" class="col s12 m12 l12">
 		<div class="row">
 
-		   <div class="input-field col s4 offset-s4">
+		   <div class="input-field col s4 offset-s4 ">
 			 <i class="material-icons prefix">local_post_office</i>
 			 <input id="email" type="email" name="email" autocomplete="off" maxlength="40"class="validate" >
 			 <label for="email" data-error="wrong" data-success="right">Email</label>
@@ -20,14 +20,14 @@ include_once 'includes/header.php';
 		   </div>
 
 		   <div class="input-field col s4  offset-s5  ">
-		  	 <button class="btn waves-effect waves-light" type="submit" 			name="action">Entrar
-   			 <i class="material-icons right">send</i>
+		  	 <button class="btn waves-effect waves-light purple lighten-1" type="submit" 			name="action">Entrar
+   			 <i class="material-icons right ">send</i>
   			</button>
 		   </div>
 
 		   <div class="input-field col s4  offset-s5  ">
-			   <a href="cadastrar.php">Registre-se agora!</a>
-			   <a href="cadastrar.php" class="btn btn-floating btn-small cyan pulse"><i class="small material-icons">edit</i></a>
+			   <a href="cadastrar.php">Cadastre-se agora!</a>
+			   <a href="cadastrar.php" class="btn btn-floating btn-small cyan pulse "><i class="small material-icons ">edit</i></a>
 
 			   
 
