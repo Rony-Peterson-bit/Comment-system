@@ -1,4 +1,4 @@
-CREATE DATABASE projeto_comentarios;
+CREATE DATABASE projet_comentarios;
 
 use projeto_comentarios;
 
