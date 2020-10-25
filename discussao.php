@@ -27,9 +27,9 @@ include_once 'includes/header.php';
 		</ul>
 	</nav>
 
-
-  
-
+       <div class="container" style=";">
+       <img src="assets/img/Capturar.PNG" alt="">
+       </div>  
 	
 			<?php
 				if (!isset($_SESSION['id_usuario']))
@@ -49,14 +49,18 @@ include_once 'includes/header.php';
 					  <form method="POST">
 						<div class="row">
 						 <div class="input-field col s3">
-						  <i class="material-icons prefix">mode_edit</i>
-						  <textarea id="icon_prefix2" name="texto" placeholder="Participe da discussão" maxlength="400"></textarea>
+						 
+						  <textarea id="icon_prefix2" name="texto" placeholder="Participe da discussão" maxlength="50" cols="30" rows="10"></textarea>
+						  
 						  <label for="icon_prefix2">First Name</label>
+						  <textarea name="" id="" cols="30" rows="10"></textarea>
 				</div>
-				</div>
+				</div>  
+				
 						<input type="submit" value="PUBLICAR COMENTARIO">
 					</form>
 					</div>
+					
 <?php			}
 			?>
 
@@ -66,8 +70,8 @@ include_once 'includes/header.php';
 			{
 				foreach ($coments as $v) 
 				{ ?>
-					<div class="area-comentario" class="">
-						
+					<div class="row" >
+					<div class="col s12 offset-s">	
 						<h4><?php echo $v['nome_pessoa']; ?></h4>
 						<p>
 							<?php
@@ -97,13 +101,6 @@ include_once 'includes/header.php';
 				echo "Ainda não há comentarios por aqui!";
 			}
 		?>
-		
-	
-		
-			
-	
-
-
 		
 	</div>
 
