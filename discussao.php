@@ -27,17 +27,17 @@ include_once 'includes/header.php';
 		</ul>
 	</nav>
 
-       <div class="container" style=";">
+       <div  style=" height: 480px;width: 50%; ">
        <img src="assets/img/Capturar.PNG" alt="">
        </div>  
 	
 			<?php
 				if (!isset($_SESSION['id_usuario']))
 				{ ?>
-					<h4>Comentários</h4>
+					<h4 style="color: white;">Comentários</h4>
 	<?php		}else
 				{ ?>
-					<h2>Deixe seu comentários</h2>
+					<h2 style="color: white;">Deixe seu comentários</h2>
 	<?php		}
 			?>
 			
@@ -50,10 +50,11 @@ include_once 'includes/header.php';
 						<div class="row">
 						 <div class="input-field col s3">
 						 
-						  <textarea id="icon_prefix2" name="texto" placeholder="Participe da discussão" maxlength="50" cols="30" rows="10"></textarea>
+						  <textarea id="icon_prefix2" name="texto"  maxlength="35" rows="10"style="color: white;">
+						</textarea>
 						  
-						  <label for="icon_prefix2">First Name</label>
-						  <textarea name="" id="" cols="30" rows="10"></textarea>
+						  <label for="icon_prefix2">Participe da discussão</label>
+						  
 				</div>
 				</div>  
 				
