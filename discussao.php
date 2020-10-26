@@ -77,10 +77,10 @@ include_once 'includes/header.php ';
 			<?php
 				if (!isset($_SESSION['id_usuario']))
 				{ ?>
-					<h4 style="color: white;">Comentários</h4>
+					<h4 style="color: black;">Comentários</h4>
 	<?php		}else
 				{ ?>
-					<h2 style="color: white;">Deixe seu comentários</h2>
+					<h2 style="color: black;">Deixe seu comentários</h2>
 	<?php		}
 			?>
 			
@@ -93,15 +93,17 @@ include_once 'includes/header.php ';
 						<div class="row">
 						 <div class="input-field col s3">
 						 
-						  <textarea id="icon_prefix2" name="texto" maxlength="35" rows="10" style="color: white;">
+						  <textarea id="icon_prefix2" name="texto" maxlength="35" rows="10" style="color: black;">
 						</textarea>
 						  
-						  <label for="icon_prefix2">Participe da discussão</label>
+						  <label for="icon_prefix2"><p>Participe da discussão</p></label>
 						  
 				</div>
 				</div>  
 				
-						<input type="submit" value="PUBLICAR COMENTARIO">
+				<button class="btn waves-effect waves-light purple lighten-1" type="submit" name="action">Submit
+					<i class="material-icons right">send</i>
+				</button>
 					</form>
 					
 					
