@@ -21,7 +21,7 @@ include_once 'includes/header.php ';
 					<li><a href="sair.php"><i class="material-icons">close</i> Sair</a></li>
 <?php			}else
 				{ ?>
-					<li><a href="entrar.php">Entrar</a></li>
+					<li><a href="entrar.php"><i class="material-icons left">account_circle</i> Logar</a></li>
 <?php			}
 			?>
 		</ul>

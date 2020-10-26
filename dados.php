@@ -12,14 +12,14 @@ $dados = $us->buscarTodosUsuarios();
  include_once 'includes/header.php';
 ?>
 
-	<nav>
+	<nav class="purple lighten-1 black-text ">
 		<ul>
-			<li><a href="index.php">Inicio</a></li>
-			<li><a href="discussao.php">Discussão</a></li>
-			<li><a href="sair.php">Sair</a></li>
+		<li ><a href="index.php " > <i class="material-icons  ">home</i>Inicio </a></li>
+			<li><a href="discussao.php"><i class="material-icons">chat_bubble_outline</i> Discussão</a></li>
+			<li><a href="sair.php"><i class="material-icons">close</i> Sair</a></li>
 		</ul>
 	</nav>
-
+	
 	
 	<table  class="centered">
 		<thead>

@@ -21,14 +21,14 @@
 				<?php
 					if(isset($_SESSION['id_master']))
 					{ ?>
-						<li><a href="dados.php">Dados</a></li>
+						<li ><a href="dados.php"> <i class="material-icons">assignment</i>Dados </a></li>
 		<?php		}
 				?>
-				<li><a href="discussao.php"><i class="material-icons left">visibility</i>Discussão</a></li>
+				<li><a href="discussao.php"><i class="material-icons">chat_bubble_outline</i> Discussão</a></li>
 				<?php
 					if(isset($informacoes))//tem uma sessao, tem uma pessoa logada
 					{ ?>
-						<li><a href="sair.php">Sair</a></li>
+						<li><a href="sair.php"><i class="material-icons">close</i> Sair</a></li>
 		<?php		}
 					else
 					{ ?>
