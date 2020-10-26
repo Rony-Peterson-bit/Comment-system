@@ -5,20 +5,20 @@
 	$coments = $c->buscarComentarios();
 
 // Header
-include_once 'includes/header.php'; 
+include_once 'includes/header.php '; 
 ?>
 
-	<nav class="purple lighten-1">
+	<nav class="purple lighten-1 black-text " >
 		<ul>
-			<li><a href="index.php">Inicio</a></li>
+			<li ><a href="index.php " > <i class="material-icons  ">home</i>Inicio </a></li>
 			<?php
 				if (isset($_SESSION['id_master'])) 
 				{ ?>
-					<li><a href="dados.php">Dados</a></li>
+					<li ><a href="dados.php"> <i class="material-icons">assignment</i>Dados </a></li>
 	<?php		}
 				if (isset($_SESSION['id_usuario']) || isset($_SESSION['id_master'])) 
 				{ ?>
-					<li><a href="sair.php">Sair</a></li>
+					<li><a href="sair.php"><i class="material-icons">close</i> Sair</a></li>
 <?php			}else
 				{ ?>
 					<li><a href="entrar.php">Entrar</a></li>
@@ -71,7 +71,7 @@ include_once 'includes/header.php';
 				{ ?>
 				<div class="row" >
 					<div class="col s12 offset-s">	
-						<h4><?php echo $v['nome_pessoa']; ?></h4>
+						<h5><i class="material-icons">account_box</i><?php echo $v['nome_pessoa']; ?></h5>
 						<p>
 							<?php
 								$data = new DateTime($v['dia']);
@@ -85,11 +85,11 @@ include_once 'includes/header.php';
 								//Verificando se comentario realmente é dele
 								if ($_SESSION['id_usuario'] == $v['fk_id_usuario']) 
 								{ ?>
-									<a href="discussao.php?id_exc=<?php echo $v['id'];?>">Excluir</a>
+									<a href="discussao.php?id_exc=<?php echo $v['id'];?>"> <i class="material-icons">delete_forever</i></a>
 			<?php				}
 							}elseif (isset($_SESSION['id_master']))
 							{ ?>
-								<a href="discussao.php?id_exc=<?php echo $v['id'];?>">Excluir</a>
+								<a href="discussao.php?id_exc=<?php echo $v['id'];?>"><i class="material-icons">delete_forever</i></a>
 			<?php			} 
 			?>	
 						</p>

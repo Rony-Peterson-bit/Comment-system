@@ -11,14 +11,7 @@ $dados = $us->buscarTodosUsuarios();
  // Header
  include_once 'includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<title>Sistema de Comentarios</title>
-	<meta charset="utf-8"/>
-	<link rel="stylesheet" href="CSS/dados.css"/>
-</head>
-<body>
+
 	<nav>
 		<ul>
 			<li><a href="index.php">Inicio</a></li>
