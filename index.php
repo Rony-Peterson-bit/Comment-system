@@ -51,13 +51,11 @@
 		</h2>
 <?php }
 	?>
-	<main>
 	
-	
-	
-	</main>
 	<h3 style="text-align: center;">TELA INICIAL</h3>
-	
+	<div  style=" height: 480px;width: 50%; ">
+       <img src="assets/img/Capturar.PNG" alt="">
+	   </div>
 	<?php
 // Footer
 include_once 'includes/footer.php';

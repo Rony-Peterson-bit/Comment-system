@@ -43,7 +43,8 @@ include_once 'includes/header.php ';
 
 			As “coisas” conectadas seguem a se multiplicar e enriquecer nossas vidas: eletrodomésticos, dispositivos médicos, automóveis inteligentes, lâmpadas inteligentes, dispositivos vestíveis e todo tipo de equipamento industrial já estão se conectando e apresentando um estimulante cenário para a inovação, para os negócios, para o poder público, gerando novos benefícios para a sociedade.</p>
 		</div>
-		<div class="divider"></div>
+		
+	<div class="divider"></div>
 		<div class="section">
 			<h5>Internet das Coisas</h5>
 			<p>De certa forma, a emergência da IoT hoje apresenta as mesmas características dos primórdios da Internet quando estávamos aprendendo e desenvolvendo novos produtos e serviços que permitiram a explosão de conhecimentos atuais e o aumento brutal dos dados e da produtividade mundial. Eventuais lacunas devem ser trabalhadas, sempre que possível, pelos mecanismos tradicionais de mercado, como auto-regulamentação, contratos padronizados, sempre com foco na competição e na livre-iniciativa.
