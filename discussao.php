@@ -26,6 +26,7 @@ include_once 'includes/header.php ';
 			?>
 		</ul>
 	</nav>
+	
 	<div class="container">
 	<div class="divider"></div>
 		<div class="section">

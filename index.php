@@ -38,8 +38,8 @@
 			</ul>
 	  </div>
 	</nav>
+	
 	<?php
-
 	 if (isset($_SESSION['id_master']) || isset($_SESSION['id_usuario']))
 	 { ?>
 		<h2 style="text-align: center;">
@@ -50,13 +50,13 @@
 			?>
 		</h2>
 <?php }
-	?>
-	
+?>
 	<h3 style="text-align: center;">TELA INICIAL</h3>
-	<div  style=" height: 480px;width: 50%; ">
+	
        <img src="assets/img/Capturar.PNG" alt="">
-	   </div>
-	<?php
+	
+
+<?php
 // Footer
 include_once 'includes/footer.php';
 ?>
