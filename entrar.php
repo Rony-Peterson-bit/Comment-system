@@ -47,7 +47,7 @@ if(isset($_POST['email']))
 	if(!empty($email) && !empty($senha))
 	{
 		require_once 'CLASSES/usuarios.php';
-		$us = new Usuario("projeto_comentarios","localhost","root","");
+		$us = new Usuario("projet_comentarios","localhost","root","");
 		if($us->entrar($email, $senha))
 		{
 			header("location: index.php");

@@ -11,19 +11,25 @@ include_once 'includes/header.php ';
 	<nav class="purple lighten-1 black-text " >
 		<ul>
 			<li ><a href="index.php " > <i class="material-icons  ">home</i>Inicio </a></li>
-			<?php
+	<?php
 				if (isset($_SESSION['id_master'])) 
-				{ ?>
+				{ 
+	?>
 					<li ><a href="dados.php"> <i class="material-icons ">assignment</i>Dados </a></li>
-	<?php		}
+	<?php
+	      		}
 				if (isset($_SESSION['id_usuario']) || isset($_SESSION['id_master'])) 
-				{ ?>
+				{ 
+	?>
 					<li><a href="sair.php"><i class="material-icons">close</i> Sair</a></li>
-<?php			}else
-				{ ?>
+    <?php			
+                }else
+				{  
+    ?>
 					<li><a href="entrar.php"><i class="material-icons left">account_circle</i> Logar</a></li>
-<?php			}
-			?>
+    <?php			
+                }
+	?>
 		</ul>
 	</nav>
 	
@@ -33,17 +39,18 @@ include_once 'includes/header.php ';
 			<h5>A (velha) internet 1</h5>
 			<p>Em 1996, mais de 20 anos atrás, o presidente dos EUA na época, Bill Clinton, editou o Administration’s Telecommunications Act of 1996, organizando a confusão inicial e lançando as diretivas que permitiram entrarmos na era da Internet. Essa regulamentação acreditava que as forças de mercado e a inovação tecnológica eram os motores da moderna internet. Foi um incrível ato de maturidade política, mesmo nos EUA. Seus autores sabiam que alguma coisa impressionante estava para acontecer e o governo prestaria um grande serviço, ficando quieto, deixando a inovação e o investimento privado florescerem.</p>
 		</div>
+		
 		<div class="divider"></div>
-		<div class="section">
-			<h5>A nova era</h5>
-			<p>Uma nova internet está aparecendo no horizonte. O espectro da Internet das Coisas assombra o mundo. Como todo processo exponencial, ninguém é capaz de prever o que vai realmente acontecer. O IDC prevê um crescimento de 17,5% ao ano. A IHS estima que o mercado de IoT crescerá de 15,4 bilhões de dispositivos conectados em 2015 para 75,4 bilhões em 2025.
+			<div class="section">
+				<h5>A nova era</h5>
+				<p>Uma nova internet está aparecendo no horizonte. O espectro da Internet das Coisas assombra o mundo. Como todo processo exponencial, ninguém é capaz de prever o que vai realmente acontecer. O IDC prevê um crescimento de 17,5% ao ano. A IHS estima que o mercado de IoT crescerá de 15,4 bilhões de dispositivos conectados em 2015 para 75,4 bilhões em 2025.
 
-			Como há 20 anos, alguma coisa impressionante está novamente acontecendo.
+				Como há 20 anos, alguma coisa impressionante está novamente acontecendo.
 
-			Em 2010, nascia a Nest Labs com a ideia de um termostato inteligente, conectado à Internet para manter as casas europeias aquecidas no inverno, com o menor consumo de energia. Evoluiu para câmeras conectadas, impressoras conectadas e, de repente, temos 17,5 bilhões de dispositivos conectados hoje em dia.
+				Em 2010, nascia a Nest Labs com a ideia de um termostato inteligente, conectado à Internet para manter as casas europeias aquecidas no inverno, com o menor consumo de energia. Evoluiu para câmeras conectadas, impressoras conectadas e, de repente, temos 17,5 bilhões de dispositivos conectados hoje em dia.
 
-			As “coisas” conectadas seguem a se multiplicar e enriquecer nossas vidas: eletrodomésticos, dispositivos médicos, automóveis inteligentes, lâmpadas inteligentes, dispositivos vestíveis e todo tipo de equipamento industrial já estão se conectando e apresentando um estimulante cenário para a inovação, para os negócios, para o poder público, gerando novos benefícios para a sociedade.</p>
-		</div>
+				As “coisas” conectadas seguem a se multiplicar e enriquecer nossas vidas: eletrodomésticos, dispositivos médicos, automóveis inteligentes, lâmpadas inteligentes, dispositivos vestíveis e todo tipo de equipamento industrial já estão se conectando e apresentando um estimulante cenário para a inovação, para os negócios, para o poder público, gerando novos benefícios para a sociedade.</p>
+			</div>
 		
 	<div class="divider"></div>
 		<div class="section">
@@ -76,34 +83,38 @@ include_once 'includes/header.php ';
 	
 			<?php
 				if (!isset($_SESSION['id_usuario']))
-				{ ?>
+				{ 
+			?>
 					<h4 style="color: black;">Comentários</h4>
 	<?php		}else
-				{ ?>
+				{ 
+	?>
 					<h2 style="color: black;">Deixe seu comentários</h2>
-	<?php		}
-			?>
+	<?php	
+	         	}
+		
 			
 
-			<?php
+			
 				if(isset($_SESSION['id_usuario']) || isset($_SESSION['id_master']))
-				{ ?>
+				{ 
+	?>
 				    
 					  <form method="POST">
 						<div class="row">
-						 <div class="input-field col s3">
-						 
-						  <textarea id="icon_prefix2" name="texto" maxlength="35" rows="10" style="color: black;">
-						</textarea>
-						  
-						  <label for="icon_prefix2"><p>Participe da discussão</p></label>
-						  
-				</div>
-				</div>  
-				
-				<button class="btn waves-effect waves-light purple lighten-1" type="submit" name="action">Submit
-					<i class="material-icons right">send</i>
-				</button>
+							<div class="input-field col s3">
+								
+								<textarea id="icon_prefix2" name="texto" maxlength="35" rows="10" style="color: black;">
+								</textarea>
+								
+								<label for="icon_prefix2">Participe da discussão</label>
+								
+							</div>
+						</div>  
+								
+								<button class="btn waves-effect waves-light purple lighten-1" type="submit" name="action">Submit
+									<i class="material-icons right">send</i>
+								</button>
 					</form>
 					
 					
@@ -113,45 +124,50 @@ include_once 'includes/header.php ';
 			if(count($coments) > 0)//se tiver comentarios no bd
 			{
 				foreach ($coments as $v) 
-				{ ?>
+				{ 
+?>
 				<div class="row" >
 					<div class="col s12 offset-s">	
 						<p><i class="small material-icons">account_box</i><?php echo $v['nome_pessoa']; ?></p>
 						<p>
-							<?php
+			    <?php
 								$data = new DateTime($v['dia']);
 								echo $data->format('d/m/Y');
 								echo " - ";
 								echo $v['horario'];
-							?>
-							<?php
+			
+							
 							if (isset($_SESSION['id_usuario'])) 
 							{
 								//Verificando se comentario realmente é dele
 								if ($_SESSION['id_usuario'] == $v['fk_id_usuario']) 
-								{ ?>
+								{ 
+				?>
 									<a href="discussao.php?id_exc=<?php echo $v['id'];?>"> <i class="material-icons">delete_forever</i></a>
-			<?php				}
+									
+			    <?php			}
 							}elseif (isset($_SESSION['id_master']))
-							{ ?>
+							{ 
+				?>
 								<a href="discussao.php?id_exc=<?php echo $v['id'];?>"><i class="material-icons">delete_forever</i></a>
-			<?php			} 
-			?>	
+				<?php		
+				        	} 
+			    ?>	
 						</p>
 						<p><?php echo $v['comentario'];?></p>
-						</div>
-	</div>
+					</div>
+	            </div>
 					
 	<?php		}
 			}else
 			{
 				echo "Ainda não há comentarios por aqui!";
 			}
-			// Footer 
-			include_once 'includes/footer.php';
+			
 		?>
 		
-
+		<?php // Footer 
+ 			include_once 'includes/footer.php'; ?>
 
 <?php
 if(isset($_POST['texto']))

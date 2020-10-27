@@ -3,11 +3,11 @@
 	session_start();
 	if(isset($_SESSION['id_usuario']))
 	{
-		$us = new Usuario("projeto_comentarios","localhost","root","");
+		$us = new Usuario("projet_comentarios","localhost","root","");
 		$informacoes = $us->buscarDadosUser($_SESSION['id_usuario']);
 	}elseif(isset($_SESSION['id_master']))
 	{
-		$us = new Usuario("projeto_comentarios","localhost","root","");
+		$us = new Usuario("projet_comentarios","localhost","root","");
 		$informacoes = $us->buscarDadosUser($_SESSION['id_master']);
 	}
 	// Header

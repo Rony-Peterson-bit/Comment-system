@@ -6,7 +6,7 @@
 
 
 
-</body>
+</body >
 <footer class="page-footer purple lighten-1 ">
           <div class="container">
             <div class="row">
