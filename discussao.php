@@ -3,14 +3,36 @@
 	require_once 'CLASSES/comentarios.php';
 	$c = new Comentario("projet_comentarios","localhost","root","");
 	$coments = $c->buscarComentarios();
-
+	if(isset($_POST['texto'])){
+		$texto = htmlentities(addslashes($_POST['texto']));
+		if (isset($_SESSION['id_master']))
+		{
+			$c->inserirComentario($_SESSION['id_master'], $texto);
+		}elseif (isset($_SESSION['id_usuario']))
+		{
+			$c->inserirComentario($_SESSION['id_usuario'], $texto);
+		}header("location: discussao.php");
+	}
+	//pegar id de exclusao
+	if (isset($_GET['id_exc']))
+	{
+		$id_e = addslashes($_GET['id_exc']);
+	
+		if(isset($_SESSION['id_master']))
+		{
+			$c->excluirComentario($id_e,$_SESSION['id_master']);
+	
+		}elseif (isset($_SESSION['id_usuario'])) 
+		{
+			$c->excluirComentario($id_e,$_SESSION['id_usuario']);
+		}header("location: discussao.php");} 
 // Header
 include_once 'includes/header.php '; 
 ?>
 
 	<nav class="purple lighten-1 black-text " >
 		<ul>
-			<li ><a href="index.php " > <i class="material-icons  ">home</i>Inicio </a></li>
+			       <li ><a href="index.php " > <i class="material-icons  ">home</i>Inicio </a></li>
 	<?php
 				if (isset($_SESSION['id_master'])) 
 				{ 
@@ -23,23 +45,17 @@ include_once 'includes/header.php ';
 	?>
 					<li><a href="sair.php"><i class="material-icons">close</i> Sair</a></li>
     <?php			
-                }else
-				{  
-    ?>
-					<li><a href="entrar.php"><i class="material-icons left">account_circle</i> Logar</a></li>
-    <?php			
-                }
-	?>
+                }else{   ?>
+					<li><a href="entrar.php"><i class="material-icons left">account_circle</i> Logar</a></li> <?php			
+                }?>
 		</ul>
 	</nav>
-	
 	<div class="container">
 	<div class="divider"></div>
 		<div class="section">
 			<h5>A (velha) internet 1</h5>
 			<p>Em 1996, mais de 20 anos atrás, o presidente dos EUA na época, Bill Clinton, editou o Administration’s Telecommunications Act of 1996, organizando a confusão inicial e lançando as diretivas que permitiram entrarmos na era da Internet. Essa regulamentação acreditava que as forças de mercado e a inovação tecnológica eram os motores da moderna internet. Foi um incrível ato de maturidade política, mesmo nos EUA. Seus autores sabiam que alguma coisa impressionante estava para acontecer e o governo prestaria um grande serviço, ficando quieto, deixando a inovação e o investimento privado florescerem.</p>
 		</div>
-		
 		<div class="divider"></div>
 			<div class="section">
 				<h5>A nova era</h5>
@@ -51,7 +67,6 @@ include_once 'includes/header.php ';
 
 				As “coisas” conectadas seguem a se multiplicar e enriquecer nossas vidas: eletrodomésticos, dispositivos médicos, automóveis inteligentes, lâmpadas inteligentes, dispositivos vestíveis e todo tipo de equipamento industrial já estão se conectando e apresentando um estimulante cenário para a inovação, para os negócios, para o poder público, gerando novos benefícios para a sociedade.</p>
 			</div>
-		
 	<div class="divider"></div>
 		<div class="section">
 			<h5>Internet das Coisas</h5>
@@ -61,11 +76,6 @@ include_once 'includes/header.php ';
 			Essas medidas poderiam ser fonte de estímulo e fortalecimento do Brasil como exportador de serviços de tecnologia de informação com soluções de IoT escaláveis globalmente.</p>
 		</div>
 	</div>
-	
-
-       
-
-<div class="divider">
   <div class="section">
     <h5>Cibersegurança e Analytics </h5>
     <p>Dois pontos críticos ressaltam nas aplicações de IoT: a Segurança (cyber security) e a Análise (Analytics) estatística de dados e metadados originados nos bilhões de dispositivos conectados, que vai permitir extrair o máximo da IoT.
@@ -76,28 +86,21 @@ include_once 'includes/header.php ';
 	</p>
   </div>
 </div>
-  
-  
- 
-	     
-	
-			<?php
+	<?php
 				if (!isset($_SESSION['id_usuario']))
 				{ 
-			?>
+	?>
 					<h4 style="color: black;">Comentários</h4>
-	<?php		}else
+	<?php		}
+	            else
 				{ 
 	?>
 					<h2 style="color: black;">Deixe seu comentários</h2>
 	<?php	
 	         	}
-		
-			
-
-			
-				if(isset($_SESSION['id_usuario']) || isset($_SESSION['id_master']))
-				{ 
+	?>	
+	<?php		
+				if(isset($_SESSION['id_usuario']) || isset($_SESSION['id_master'])){ 
 	?>
 				    
 					  <form method="POST">
@@ -116,21 +119,19 @@ include_once 'includes/header.php ';
 									<i class="material-icons right">send</i>
 								</button>
 					</form>
-					
-					
-<?php		
+    <?php		
 	}
-			
-			if(count($coments) > 0)//se tiver comentarios no bd
+	?>
+	<?php		if(count($coments) > 0)//se tiver comentarios no bd
 			{
 				foreach ($coments as $v) 
 				{ 
-?>
+    ?>
 				<div class="row" >
 					<div class="col s12 offset-s">	
 						<p><i class="small material-icons">account_box</i><?php echo $v['nome_pessoa']; ?></p>
 						<p>
-			    <?php
+	 <?php
 								$data = new DateTime($v['dia']);
 								echo $data->format('d/m/Y');
 								echo " - ";
@@ -145,8 +146,10 @@ include_once 'includes/header.php ';
 				?>
 									<a href="discussao.php?id_exc=<?php echo $v['id'];?>"> <i class="material-icons">delete_forever</i></a>
 									
-			    <?php			}
-							}elseif (isset($_SESSION['id_master']))
+				<?php			
+				                }
+							}
+							elseif (isset($_SESSION['id_master']))
 							{ 
 				?>
 								<a href="discussao.php?id_exc=<?php echo $v['id'];?>"><i class="material-icons">delete_forever</i></a>
@@ -156,49 +159,8 @@ include_once 'includes/header.php ';
 						</p>
 						<p><?php echo $v['comentario'];?></p>
 					</div>
-	            </div>
-					
-	<?php		}
-			}else
-			{
-				echo "Ainda não há comentarios por aqui!";
-			}
-			
-		?>
+				</div>
+
+	<?php	}}else{	echo "Ainda não há comentarios por aqui!";}
 		
-		<?php // Footer 
- 			include_once 'includes/footer.php'; ?>
-
-<?php
-if(isset($_POST['texto']))
-{
-	$texto = htmlentities(addslashes($_POST['texto']));
-	if (isset($_SESSION['id_master']))
-	{
-		$c->inserirComentario($_SESSION['id_master'], $texto);
-	}elseif (isset($_SESSION['id_usuario']))
-	{
-		$c->inserirComentario($_SESSION['id_usuario'], $texto);
-	}
-	header("location: discussao.php");
-}
-?>
-
-
-<?php
-//pegar id de exclusao
-if (isset($_GET['id_exc']))
-{
-	$id_e = addslashes($_GET['id_exc']);
-
-	if(isset($_SESSION['id_master']))
-	{
-		$c->excluirComentario($id_e,$_SESSION['id_master']);
-
-	}elseif (isset($_SESSION['id_usuario'])) 
-	{
-		$c->excluirComentario($id_e,$_SESSION['id_usuario']);
-	}
-	header("location: discussao.php");
-}
 ?>

@@ -23,7 +23,7 @@ Class Comentario{
 	{
 		$dados = array();
 		$cmd = $this->pdo->prepare("SELECT *,
-		(SELECT nome from usuarios WHERE id = fk_id_usuario) as nome_pessoa FROM comentarios ORDER BY id DESC");
+		(SELECT nome from usuarios WHERE id = fk_id_usuario) as nome_pessoa FROM comentarios ORDER BY dia,horario DESC");
 		$cmd->execute();
 		$dados = $cmd->fetchAll(PDO::FETCH_ASSOC);
 		return $dados;
@@ -48,7 +48,8 @@ Class Comentario{
 
 	public function inserirComentario($id_pessoa, $comentario)
 	{
-		$cmd = $this->pdo->prepare("INSERT INTO comentarios (comentario, dia, horario, fk_id_usuario) VALUES (:c, :d, :h, :fk)");
+		$cmd = $this->pdo->prepare("INSERT INTO comentarios (comentario, dia, horario, fk_id_usuario) 
+			VALUES (:c, :d, :h, :fk)");
 		$cmd->bindValue(":c",$comentario);
 		$cmd->bindValue(":d",date('Y-m-d'));
 		$cmd->bindValue(":h",date('H:i'));
