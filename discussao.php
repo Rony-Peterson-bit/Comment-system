@@ -76,16 +76,6 @@ include_once 'includes/header.php ';
 			Essas medidas poderiam ser fonte de estímulo e fortalecimento do Brasil como exportador de serviços de tecnologia de informação com soluções de IoT escaláveis globalmente.</p>
 		</div>
 	</div>
-  <div class="section">
-    <h5>Cibersegurança e Analytics </h5>
-    <p>Dois pontos críticos ressaltam nas aplicações de IoT: a Segurança (cyber security) e a Análise (Analytics) estatística de dados e metadados originados nos bilhões de dispositivos conectados, que vai permitir extrair o máximo da IoT.
-	Como Cyber Security, Analytics acabou virando um ramo à parte, fortemente informado pelo Big Data, que permite encontrar correlações além daquelas imaginadas pelos formuladores dos modelos estatísticos.
-	Ligadas à segurança, mas que devem ser tratados à parte, estão a privacidade e a proteção de dados pessoais. Não existem privacidade e proteção de dados sem uma excelente segurança cibernética. A segurança é condição necessária, porém não suficiente para garantir a privacidade individual.
-	Ética Corporativa, Leis, Regulamentações, Governança e Compliance são necessárias para se assegurar a privacidade e proteção dos dados.
-	Os formuladores de políticas públicas deveriam encorajar práticas de desenvolvimento seguro de aplicações. A segurança deve estar inserida no projeto, “security by design” ou quando isso não for possível pelo alto custo de desenvolvimento ou pela urgência em se chegar ao mercado, estimular a Auditoria de Segurança do Código das Aplicações, que permite identificar as vulnerabilidades críticas introduzidas no código.
-	</p>
-  </div>
-</div>
 	<?php
 				if (!isset($_SESSION['id_usuario']))
 				{ 
@@ -114,11 +104,10 @@ include_once 'includes/header.php ';
 								
 							</div>
 						</div>  
-								
 								<button class="btn waves-effect waves-light purple lighten-1" type="submit" name="action">Submit
 									<i class="material-icons right">send</i>
 								</button>
-					</form>
+					    </form>
     <?php		
 	}
 	?>
@@ -162,5 +151,6 @@ include_once 'includes/header.php ';
 				</div>
 
 	<?php	}}else{	echo "Ainda não há comentarios por aqui!";}
-		
+	// Footer
+include_once 'includes/footer.php';	
 ?>

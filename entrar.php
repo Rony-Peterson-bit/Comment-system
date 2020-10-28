@@ -61,8 +61,6 @@ if(isset($_POST['email']))
 	   <?php
 	}
 }
-
 // Footer
 include_once 'includes/footer.php';
-
 ?>
