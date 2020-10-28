@@ -53,10 +53,7 @@
 ?>
 	<h3 style="text-align: center;">TELA INICIAL</h3>
 	
-       <img src="assets/img/Capturar.PNG" alt="">
-	
-
-<?php
+       <img src="assets/img/Capturar.PNG" alt=""><?php
 // Footer
 include_once 'includes/footer.php';
 ?>

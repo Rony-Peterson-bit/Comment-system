@@ -41,19 +41,8 @@ include_once 'includes/header.php';
 		</div>
 	</div>
 	<?php // Footer
-include_once 'includes/footer.php'; ?>
-
-<!--========================== PHP ==========================-->
-
-<?PHP
-// 1 - VERIFICAR SE ELA APERTOU O BOTAO CADASTRAR - ok
-// 2 - GUARDAR DADOS DENTRO DE VARIAVEIS e verificar se esta vazia - ok
-// 3 - ENVIAR DADOS COLHIDOS PARA A CLASSE , FUNCAO CADASTRAR
-// 4 - VERIFICAR O RETORNO FALSE OU TRUE
-
-if(isset($_POST['nome']))
-{
-
+include_once 'includes/footer.php'; 
+if(isset($_POST['nome'])){
 	$nome = addslashes($_POST['nome']);
 	$email = addslashes($_POST['email']);
 	$senha = addslashes($_POST['senha']);
@@ -80,7 +69,4 @@ if(isset($_POST['nome']))
 	{ ?>
 		<p style="text-align: center;"class="mensagem">Preencha todos os campos!</p>
 <?php }
-}
-
-
-?>
+} ?>
