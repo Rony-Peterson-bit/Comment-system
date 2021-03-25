@@ -1,7 +1,9 @@
-# CRUD simples
+# Simple CRUD
 
-## Tecnologias Usadas
+## Technologies Used
 * Materialize
 * Xampp
 * VS Code
+
+
 
