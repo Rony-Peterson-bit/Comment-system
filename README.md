@@ -2,7 +2,7 @@
 
 ## Technologies Used
 * Materialize
-* Xampp
+* Xampp/php/mySQL
 * VS Code
 
 
